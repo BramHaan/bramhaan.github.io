@@ -1,4 +1,4 @@
-html {
+html.ei {
   min-height:100%;
   background: 
    linear-gradient(rgba(255,0,0,1) 0%, rgba(255,154,0,1) 10%, rgba(208,222,33,1) 20%, rgba(79,220,74,1) 30%, rgba(63,218,216,1) 40%, rgba(47,201,226,1) 50%, rgba(28,127,238,1) 60%, rgba(95,21,242,1) 70%, rgba(186,12,248,1) 80%, rgba(251,7,217,1) 90%, rgba(255,0,0,1) 100%) 
@@ -8,6 +8,9 @@ html {
 @keyframes a {
   to {background-position:0 -200%}
 }
+
+html.jo {
+    background: linear-gradient(red, yellow, blue, red);
 }
 body.ei img {
   border-collapse:collapse;
@@ -16,22 +19,36 @@ body.ei img {
 header p, h1 {
 }
 button.bes{
+border: none;
+border-radius: 10px;
+margin: 10px;
+width: 35px;
+height: 20px;
 float: right;
 background-color: white;
 color: black;
-transition: 1s;
+transition: 0.3s;
 }
 button.bes:hover{
+width: 40px;
+height: 25px;
 color: white;
 background-color: red;
 }
 a button{
+border: none;
+border-radius: 10px;
+margin: 10px;
+width: 35px;
+height: 20px;
 color: black;
 background-color: white;
-transition: 1s;
+transition: 0.3s;
 float: right;
 }
 a button:hover{
+width: 40px;
+height: 25px;
 background-color: green;
 color: white;
 }
@@ -40,9 +57,6 @@ header p {
     font-size: 16px;
     font-weight: bold;
     margin-top: 0px;
-}
-#et{
-transition: 1s;
 }
    #et:hover {
     content: url('../jpg/ei1b.jpg');
@@ -57,6 +71,21 @@ transition: 1s;
     content: url('../jpg/ei4b.jpg');
 }
    #el:hover {
+    content: url('../jpg/ei6b.jpg');
+}
+   #jt:hover {
+    content: url('../jpg/ei1b.jpg');
+}
+   #jd:hover {
+    content: url('../jpg/ei2b.jpg');
+}
+   #jp:hover {
+    content: url('../jpg/ei3b.jpg');
+}
+   #jh:hover {
+    content: url('../jpg/ei4b.jpg');
+}
+   #jl:hover {
     content: url('../jpg/ei6b.jpg');
 }
 header h1{
@@ -104,7 +133,7 @@ nav ul li:last-child {
 nav ul li a {
     text-decoration: none;
     color: black;
-    transition: 1s;
+    transition: 0.5s;
 }
 nav ul li a:hover{
     color: red;

@@ -1,29 +1,37 @@
 html{
 background: linear-gradient(red, yellow, blue, red);
 }
-body.ei img {
-  border-collapse:collapse;
-  border: none;
-}
 header p, h1 {
 }
 button.bes{
+border-radius: 10px;
+margin: 10px;
+width: 35px;
+height: 20px;
 float: right;
 background-color: white;
 color: black;
-transition: 1s;
+transition: 0.3s;
 }
 button.bes:hover{
+width: 40px;
+height: 25px;
 color: white;
 background-color: red;
 }
 a button{
+border-radius: 10px;
+margin: 10px;
+width: 35px;
+height: 20px;
 color: black;
 background-color: white;
-transition: 1s;
+transition: 0.3s;
 float: right;
 }
 a button:hover{
+width: 40px;
+height: 25px;
 background-color: green;
 color: white;
 }
@@ -33,19 +41,19 @@ header p {
     font-weight: bold;
     margin-top: 0px;
 }
-   #et:hover {
+   #jt:hover {
     content: url('../jpg/ei1b.jpg');
 }
-   #ed:hover {
+   #jd:hover {
     content: url('../jpg/ei2b.jpg');
 }
-   #ep:hover {
+   #jp:hover {
     content: url('../jpg/ei3b.jpg');
 }
-   #eh:hover {
+   #jh:hover {
     content: url('../jpg/ei4b.jpg');
 }
-   #el:hover {
+   #jl:hover {
     content: url('../jpg/ei6b.jpg');
 }
 header h1{
