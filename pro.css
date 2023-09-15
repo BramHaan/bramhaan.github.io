@@ -12,6 +12,7 @@ html.ei {
 html.jo {
     background: linear-gradient(red, yellow, blue, red);
 }
+
 body.ei img {
   border-collapse:collapse;
   border: none;
@@ -59,34 +60,34 @@ header p {
     margin-top: 0px;
 }
    #et:hover {
-    content: url('../jpg/ei1b.jpg');
+    content: url('jpg/ei1b.jpg');
 }
    #ed:hover {
-    content: url('../jpg/ei2b.jpg');
+    content: url('jpg/ei2b.jpg');
 }
    #ep:hover {
-    content: url('../jpg/ei3b.jpg');
+    content: url('jpg/ei3b.jpg');
 }
    #eh:hover {
-    content: url('../jpg/ei4b.jpg');
+    content: url('jpg/ei4b.jpg');
 }
    #el:hover {
-    content: url('../jpg/ei6b.jpg');
+    content: url('jpg/ei6b.jpg');
 }
    #jt:hover {
-    content: url('../jpg/ei1b.jpg');
+    content: url('jpg/ei1b.jpg');
 }
    #jd:hover {
-    content: url('../jpg/ei2b.jpg');
+    content: url('jpg/ei2b.jpg');
 }
    #jp:hover {
-    content: url('../jpg/ei3b.jpg');
+    content: url('jpg/ei3b.jpg');
 }
    #jh:hover {
-    content: url('../jpg/ei4b.jpg');
+    content: url('jpg/ei4b.jpg');
 }
    #jl:hover {
-    content: url('../jpg/ei6b.jpg');
+    content: url('jpg/ei6b.jpg');
 }
 header h1{
   font-size: 16px;
