@@ -24,7 +24,7 @@ body img {
 }
 header p, h1 {
 }
-button.bes{
+#jolo.bes{
 border: none;
 border-radius: 10px;
 margin: 10px;
@@ -35,13 +35,13 @@ background-color: white;
 color: black;
 transition: 0.3s;
 }
-button.bes:hover{
+#jolo.bes:hover{
 width: 40px;
 height: 25px;
 color: white;
 background-color: red;
 }
-a button{
+a button.jolo{
 border: none;
 border-radius: 10px;
 margin: 10px;
@@ -52,7 +52,7 @@ background-color: white;
 transition: 0.3s;
 float: right;
 }
-a button:hover{
+a button.jolo:hover{
 width: 40px;
 height: 25px;
 background-color: green;
