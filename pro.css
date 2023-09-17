@@ -24,6 +24,10 @@ body img {
 }
 header p, h1 {
 }
+p.jo{
+text-align: center;
+}
+
 #jolo.bes{
 border: none;
 border-radius: 10px;
