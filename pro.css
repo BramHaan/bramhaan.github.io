@@ -1,3 +1,25 @@
+div{
+  font-family: monospace;
+  animation: colorRotate 6s linear 0s infinite;
+}
+
+@keyframes colorRotate {
+  from {
+    color: red;
+  }
+  10% {
+    color: blue;
+  }
+  50% {
+    color: yellow;
+  }
+  75% {
+    color: pink;
+  }
+  100% {
+    color: red;
+  }
+}
 html.ei {
   min-height:100%;
   background: 
@@ -14,7 +36,11 @@ overflow: hidden;
 html.jo {
     background: linear-gradient(red, yellow, blue, red);
 }
-
+p, h1{
+background: linear-gradient(red, yellow, blue, red);
+-webkit-background-clip: text;
+color: transparent;
+}
 body img {
   width: 200px;
   height: 800px;
@@ -23,11 +49,34 @@ body img {
   transition: 0.5s;
 }
 header p, h1 {
+font-family: monospace;
+  animation: colorRotate 6s linear 0s infinite;
+}
+
+@keyframes colorRotate {
+  from {
+    color: red;
+  }
+  10% {
+    color: blue;
+  }
+  50% {
+    color: yellow;
+  }
+  75% {
+    color: pink;
+  }
+  100% {
+    color: red;
+  }
+}
+}
+header.jo {
+font-family: monospace;
 }
 p.jo{
 text-align: center;
 }
-
 #jolo.bes{
 border: none;
 border-radius: 10px;
@@ -62,14 +111,7 @@ height: 25px;
 background-color: green;
 color: white;
 }
-a button.hell{
-margin: 10px;
-width: 275px;
-height: 25px;
-color: black;
-background-color: white;
-transition: 0.3s;
-}
+
 a button.jolo2{
 border-radius: 10px;
 border: none;
@@ -87,6 +129,7 @@ background-color: green;
 color: white;
 }
 a button.hell{
+border-radius: 10px;
 margin: 10px;
 width: 275px;
 height: 25px;
@@ -101,6 +144,7 @@ background-color: green;
 color: white;
 }
 a button.hellnaw{
+border-radius: 10px;
 margin: 10px;
 width: 75px;
 height: 25px;
@@ -218,7 +262,8 @@ nav ul li a {
     transition: 0.5s;
 }
 nav ul li a:hover{
-    color: red;
+    color: green;
+	text-decoration: underline;
 }
 nav ul li.selected{
     color: gray;

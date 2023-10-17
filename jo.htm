@@ -1,9 +1,23 @@
 <html class="jo">
 <link type="text/css" rel="stylesheet" href="pro.css"/>
+<script>
+window.addEventListener('keydown', onkeydown);
+var home = 36;
+function onkeydown(event) {
+
+  if (event.keyCode === home){
+    window.location.href = "home2.htm";
+  }
+else if(event.keyCode === 82){
+window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+}
+}
+</script>
 <title>easter eggs</title>
 <header>
 <p><sup>de</sup>haan</p>
 <h1>easter eggs</h1>
+
 <nav>
 <ul>
 
@@ -16,6 +30,8 @@
 <li><a href="jo2.htm">programmeren leren</a></li>
 </ul>
 </nav>
+<h1><div class="jo">hover de muis over de eieren om te kijken naar de easter eggs</div>
+</h1>
 </header>
 <a href="index.htm"><button class="jolo">aan</button></a><button id="jolo" class="bes">uit</button>
 <a class="ei" href="meester2.htm"><img id="et" src="jpg/ei1.jpg"></a>
