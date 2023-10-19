@@ -70,7 +70,7 @@ font-family: monospace;
     color: red;
   }
 }
-}
+
 header.jo {
 font-family: monospace;
 }
@@ -111,7 +111,14 @@ height: 25px;
 background-color: green;
 color: white;
 }
-
+#hehe a{
+text-decoration:none;
+color:black;
+}
+#hehe a:hover{
+text-decoration: underline;
+color: blue;
+}
 a button.jolo2{
 border-radius: 10px;
 border: none;
