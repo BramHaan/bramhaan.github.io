@@ -36,6 +36,9 @@ overflow: hidden;
 html.jo {
     background: linear-gradient(red, yellow, blue, red);
 }
+iframe{
+border-collapse: collapse;
+}
 p, h1{
 background: linear-gradient(red, yellow, blue, red);
 -webkit-background-clip: text;
