@@ -1,7 +1,4 @@
-div{
-  font-family: monospace;
-  animation: colorRotate 6s linear 0s infinite;
-}
+
 
 @keyframes colorRotate {
   from {
@@ -13,12 +10,13 @@ div{
   50% {
     color: yellow;
   }
-  75% {
-    color: pink;
-  }
-  100% {
-    color: red;
-  }
+   75%{
+	color:blue;
+   }
+   100%{
+	color:red;
+   }
+  
 }
 html.ei {
   min-height:100%;
@@ -39,40 +37,27 @@ html.jo {
 iframe{
 border-collapse: collapse;
 }
+.jah{
+background-color: pink;
+}
 p, h1{
-background: linear-gradient(red, yellow, blue, red);
+background: linear-gradient(red, yellow, blue);
 -webkit-background-clip: text;
 color: transparent;
 }
-body img {
+a img {
   width: 200px;
   height: 800px;
   border-collapse:collapse;
   border: none;
   transition: 0.5s;
 }
-header p, h1 {
+header p, h1{
 font-family: monospace;
   animation: colorRotate 6s linear 0s infinite;
 }
 
-@keyframes colorRotate {
-  from {
-    color: red;
-  }
-  10% {
-    color: blue;
-  }
-  50% {
-    color: yellow;
-  }
-  75% {
-    color: pink;
-  }
-  100% {
-    color: red;
-  }
-}
+
 
 header.jo {
 font-family: monospace;
@@ -275,6 +260,6 @@ nav ul li a:hover{
     color: green;
 	text-decoration: underline;
 }
-nav ul li.selected{
+.selected{
     color: gray;
 }
