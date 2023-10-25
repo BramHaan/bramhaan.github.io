@@ -1,6 +1,7 @@
 <html class="ei"  >
-
+<audio id="audio" src="omg.mp3"></audio>
 <script>
+
 window.addEventListener('keydown', onkeydown);
 var home = 36;
 function onkeydown(event) {
@@ -10,6 +11,10 @@ function onkeydown(event) {
   }
 else if(event.keyCode === 82){
 window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+}
+else if(event.keyCode === 59){
+var sound1 = new Audio('omg.mp3'); 
+sound1.play();
 }
 }
 </script>
