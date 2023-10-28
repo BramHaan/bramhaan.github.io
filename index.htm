@@ -3,21 +3,35 @@
 
 window.addEventListener('keydown', onkeydown);
 var home = 36;
+var isSoundPlaying = false;
 function onkeydown(event) {
 
   if (event.keyCode === home){
+  console.log('home')
     window.location.href = "home.htm";
   }
-else if(event.keyCode === 82){
-window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
-}
-else if(event.keyCode === 79){
-var sound1 = new Audio('ohmy/oh-my-god-meme.mp3'); 
-console.log('audio');
-sound1.play();
 
+  else if(event.keyCode === 82){
+  console.log('rickrolled')
+     window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+  }
+  else if(event.keyCode === 79){
+  
+  if (!isSoundPlaying){ 
+    isSoundPlaying = true;
+    var sound1 = new Audio('ohmy/oh-my-god-meme.mp3'); 
+    console.log('audio');
+    sound1.play();
+    setTimeout(stopSoundBlock, 1900);
+  }
+  }
 }
+
+function stopSoundBlock(){
+    	isSoundPlaying = false;
 }
+
+
 </script>
 <link type="text/css" rel="stylesheet" href="pro.css"/>
 <title>easter eggs</title>
