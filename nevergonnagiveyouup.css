@@ -1,8 +1,9 @@
 button{
-	background-color: red;
+	background:linear-gradient(green ,red);
+	border-radius:100%;
 	width: 100px;
 	height: 100px;
-animation: 5s slidein infinite;
+animation: 10s slidein infinite;
 }
 @keyframes slidein {
   25%{
@@ -10,7 +11,8 @@ animation: 5s slidein infinite;
   }
   50%{
 	  transform: translateY(800%);
-  }	  
+  }
+
   75% {
     
 	transform: translate(1800%, 800%);

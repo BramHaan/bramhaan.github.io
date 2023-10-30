@@ -2,7 +2,18 @@
 <p>the bad guys</p>
 <button onclick="mf()">hi</button>
 <script>
-function mf() {
-window.location.href = "index.htm";
-}
+  function mf() {
+    score += 1
+
+  }
+  
+  window.addEventListener('keyup', onkeydown);
+  
+  function onkeydown(event) {
+    if (event.keyCode === 83){
+		console.log(score)
+	}
+  }
+var score = 0
+
 </script>
