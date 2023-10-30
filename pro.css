@@ -52,7 +52,7 @@ a img {
   border: none;
   transition: 0.5s;
 }
-header p, h1{
+p, h1{
 font-family: monospace;
   animation: colorRotate 6s linear 0s infinite;
 }
@@ -153,8 +153,8 @@ height: 35px;
 background-color: green;
 color: white;
 }
-header p {
-    float: left;
+p {
+	float: left;
     font-size: 16px;
     font-weight: bold;
     margin-top: 0px;
