@@ -1,9 +1,11 @@
 button{
 	background:linear-gradient(green ,red);
-	border-radius:100%;
 	width: 100px;
 	height: 100px;
 animation: 10s slidein infinite;
+}
+h1, p{
+	text-align:center;
 }
 @keyframes slidein {
   25%{
