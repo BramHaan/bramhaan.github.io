@@ -3,15 +3,36 @@
 <script>
 window.addEventListener('keydown', onkeydown);
 var home = 36;
+var isSoundPlaying = false;
 function onkeydown(event) {
-
+var space = 32;
   if (event.keyCode === home){
-    window.location.href = "home2.htm";
+  console.log('home')
+    window.location.href = "home.htm";
   }
-else if(event.keyCode === 82){
-window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+if (event.keyCode === space){
+
+  }
+  else if(event.keyCode === 82){
+  console.log('rickrolled')
+     window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+  }
+  else if(event.keyCode === 79){
+  
+  if (!isSoundPlaying){ 
+    isSoundPlaying = true;
+    var sound1 = new Audio('ohmy/oh-my-god-meme.mp3'); 
+    console.log('audio');
+    sound1.play();
+    setTimeout(stopSoundBlock, 1900);
+  }
+  }
 }
+function stopSoundBlock(){
+    	isSoundPlaying = false;
 }
+
+
 </script>
 <title>easter eggs</title>
 <header>
@@ -28,6 +49,7 @@ window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
 
 </li>
 <li><a href="jo2.htm">programmeren leren</a></li>
+<li><a href="jaaaaa.htm">Victors idee&euml;n</a></li>
 </ul>
 </nav>
 <h1><div class="jo">hover de muis over de eieren om te kijken naar de easter eggs</div>
