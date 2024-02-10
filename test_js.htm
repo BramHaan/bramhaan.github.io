@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<body >
+	<canvas id="myCanvas" width="800" height="600" ></canvas>
+<body>
+<head>
+<script>
+var canvas_breedte = 800;
+var canvas_hoogte = 600;
+var grond_y = 540;
+var kip_hoogte =  229;
+var kip_breedte = 181;
+var kipY_versnelling = 1;
+var kipYsnelheid = 0;
+var space = 32;
+var achtergrond_breedte = 1000;
+var spatie_ingedrukt = false;
+var kip_sprong_kracht = 20;
+var kipisinlucht = false;
+const canvas = document.getElementById("myCanvas");
+const ctx = canvas.getContext("2d");
+var kipX = canvas_breedte / 2;
+var kipY = grond_y - kip_hoogte;
+var kipX_snelheid = 5;
+var cameraX = 0;
+var cameraY = 0;
+var kip = new Image();
+kip.src = 'jpg/kip.jpg';
+var achtergrond = new Image();
+achtergrond.src = 'jpg/achtergrond.jpg';
+window.addEventListener('DOMContentLoaded', start);
+window.addEventListener('keydown', onKeyDown);
+window.addEventListener('keyup', onKeyUp);
+function onKeyDown(event){
+	if (event.keyCode === space) {
+		spatie_ingedrukt = true;
+	}
+}
+function onKeyUp(event){
+	if (event.keyCode === 32) {
+		spatie_ingedrukt = false;		
+	}
+}
+function start(){
+	window.requestAnimationFrame(hoofdlus);
+}
+
+
+function hoofdlus(){
+	update();
+	draw();
+	window.requestAnimationFrame(hoofdlus);
+}
+function update(){
+	kipX = kipX + kipX_snelheid;
+	if (spatie_ingedrukt && !kipisinlucht) {
+	    kipYsnelheid = -kip_sprong_kracht;
+		kipisinlucht = true;
+	}
+//kipY = kipY + 1; //deze hoeft niet meer!
+	kipY = kipY + kipYsnelheid;
+	kipYsnelheid = kipYsnelheid + kipY_versnelling;
+	if(kipY > (grond_y - kip_hoogte)){
+		kipY = grond_y - kip_hoogte;
+		kipYsnelheid = 0;
+		kipisinlucht = false;
+	}
+	cameraX = kipX - 150;
+}
+function draw(){
+//ctx.clearRect(0,0, canvas_breedte, canvas_hoogte); //deze hoeft niet meer!
+//ctx.drawImage(kip, kipX - cameraX , kipY - cameraY ); //deze staat op de verkeerde plaats! kijk maar hier onder
+	ctx.fillStyle = 'LightSkyBlue';
+	ctx.fillRect(0, 0, canvas_breedte, grond_y - 40);
+
+	var achtergrondX = -(cameraX % achtergrond_breedte);
+	ctx.drawImage(achtergrond,achtergrondX, -210);
+	ctx.drawImage(achtergrond, achtergrondX + achtergrond_breedte, -210); 
+//ctx.drawImage(achtergrond, 0 - cameraX, -210); //deze hoeft niet meer!
+
+	ctx.fillStyle = 'ForestGreen';
+	ctx.fillRect(0, grond_y - 40, canvas_breedte, canvas_hoogte - grond_y + 40);
+//ctx.drawImage(kip, kipX, kipY); //deze hoeft niet meer!
+	ctx.drawImage(kip, kipX - cameraX , kipY - cameraY ); //hier moet hij staan!
+}
+</script>
+	
+</head>
+
+</html>
