@@ -26,6 +26,8 @@ var cameraX = 0;
 var cameraY = 0;
 var kip = new Image();
 kip.src = 'jpg/kip.jpg';
+var bosje = new Image();
+bosje.src = 'jpg/bosje.jpg';
 var achtergrond = new Image();
 achtergrond.src = 'jpg/achtergrond.jpg';
 window.addEventListener('DOMContentLoaded', start);
@@ -57,7 +59,6 @@ function update(){
 	    kipYsnelheid = -kip_sprong_kracht;
 		kipisinlucht = true;
 	}
-//kipY = kipY + 1; //deze hoeft niet meer!
 	kipY = kipY + kipYsnelheid;
 	kipYsnelheid = kipYsnelheid + kipY_versnelling;
 	if(kipY > (grond_y - kip_hoogte)){
@@ -68,20 +69,14 @@ function update(){
 	cameraX = kipX - 150;
 }
 function draw(){
-//ctx.clearRect(0,0, canvas_breedte, canvas_hoogte); //deze hoeft niet meer!
-//ctx.drawImage(kip, kipX - cameraX , kipY - cameraY ); //deze staat op de verkeerde plaats! kijk maar hier onder
 	ctx.fillStyle = 'LightSkyBlue';
 	ctx.fillRect(0, 0, canvas_breedte, grond_y - 40);
-
 	var achtergrondX = -(cameraX % achtergrond_breedte);
 	ctx.drawImage(achtergrond,achtergrondX, -210);
 	ctx.drawImage(achtergrond, achtergrondX + achtergrond_breedte, -210); 
-//ctx.drawImage(achtergrond, 0 - cameraX, -210); //deze hoeft niet meer!
-
 	ctx.fillStyle = 'ForestGreen';
 	ctx.fillRect(0, grond_y - 40, canvas_breedte, canvas_hoogte - grond_y + 40);
-//ctx.drawImage(kip, kipX, kipY); //deze hoeft niet meer!
-	ctx.drawImage(kip, kipX - cameraX , kipY - cameraY ); //hier moet hij staan!
+	ctx.drawImage(kip, kipX - cameraX , kipY - cameraY );
 }
 </script>
 	
