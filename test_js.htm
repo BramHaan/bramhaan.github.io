@@ -8,26 +8,38 @@
 var canvas_breedte = 800;
 var canvas_hoogte = 600;
 var grond_y = 540;
-var kip_hoogte =  229;
-var kip_breedte = 181;
-var kipY_versnelling = 1;
-var kipYsnelheid = 0;
+var kip_breedte = 141;
+var kip_hoogte = 139
+var peter_hoogte =  229;
+var peter_breedte = 181;
+var peterY_versnelling = 1;
+var peterYsnelheid = 0;
 var space = 32;
 var achtergrond_breedte = 1000;
 var spatie_ingedrukt = false;
-var kip_sprong_kracht = 20;
-var kipisinlucht = false;
+var peter_sprong_kracht = 20;
+var peterisinlucht = false;
+var kip = new Image();
+kip.scr = 'jpg/geanimeerdekip.jpg';
+var kipdata = [{
+	x: 400,
+	y: grond_y - kip_hoogte
+}];
+var kipspritesheet = {
+	nrFramesPerRij:4,
+	spriteWidth:kip_breedte,
+	spriteHeight:kip_hoogte,
+	image: kip
+};
 const canvas = document.getElementById("myCanvas");
 const ctx = canvas.getContext("2d");
-var kipX = canvas_breedte / 2;
-var kipY = grond_y - kip_hoogte;
-var kipX_snelheid = 5;
+var peterX = canvas_breedte / 2;
+var peterY = grond_y - peter_hoogte;
+var peterX_snelheid = 5;
 var cameraX = 0;
 var cameraY = 0;
-var kip = new Image();
-kip.src = 'jpg/kip.jpg';
-var bosje = new Image();
-bosje.src = 'jpg/bosje.jpg';
+var peter = new Image();
+peter.src = 'jpg/peter.png';
 var achtergrond = new Image();
 achtergrond.src = 'jpg/achtergrond.jpg';
 window.addEventListener('DOMContentLoaded', start);
@@ -54,19 +66,19 @@ function hoofdlus(){
 	window.requestAnimationFrame(hoofdlus);
 }
 function update(){
-	kipX = kipX + kipX_snelheid;
-	if (spatie_ingedrukt && !kipisinlucht) {
-	    kipYsnelheid = -kip_sprong_kracht;
-		kipisinlucht = true;
+	peterX = peterX + peterX_snelheid;
+	if (spatie_ingedrukt && !peterisinlucht) {
+	    peterYsnelheid = -peter_sprong_kracht;
+		peterisinlucht = true;
 	}
-	kipY = kipY + kipYsnelheid;
-	kipYsnelheid = kipYsnelheid + kipY_versnelling;
-	if(kipY > (grond_y - kip_hoogte)){
-		kipY = grond_y - kip_hoogte;
-		kipYsnelheid = 0;
-		kipisinlucht = false;
+	peterY = peterY + peterYsnelheid;
+	peterYsnelheid = peterYsnelheid + peterY_versnelling;
+	if(peterY > (grond_y - peter_hoogte)){
+		peterY = grond_y - peter_hoogte;
+		peterYsnelheid = 0;
+		peterisinlucht = false;
 	}
-	cameraX = kipX - 150;
+	cameraX = peterX - 150;
 }
 function draw(){
 	ctx.fillStyle = 'LightSkyBlue';
@@ -76,7 +88,23 @@ function draw(){
 	ctx.drawImage(achtergrond, achtergrondX + achtergrond_breedte, -210); 
 	ctx.fillStyle = 'ForestGreen';
 	ctx.fillRect(0, grond_y - 40, canvas_breedte, canvas_hoogte - grond_y + 40);
-	ctx.drawImage(kip, kipX - cameraX , kipY - cameraY );
+	ctx.drawImage(peter, peterX - cameraX , peterY - cameraY );
+	function tekenGeanimeerdeSprite(schermX, schermY, frameNr, spriteSheet) {
+		var spriteSheetRij = Math.floor(frameNr / spriteSheet.nrFramesPerRij);
+		var spriteSheetKolom = frameNr % spriteSheet.nrFramesPerRij;
+		var spriteSheetX = spriteSheetKolom * spriteSheet.spriteWidth;
+		var spriteSheetY = spriteSheetRij * spriteSheet.spriteHeight;
+		ctx.drawImage(
+			spriteSheet.image,
+			spriteSheetX, spriteSheetY,
+			spriteSheet.spriteWidth, spriteSheet.spriteHeight, schermX, schermY,
+			spriteSheet.spriteWidth, spriteSheet.spriteHeight
+		);
+	}
+	for (var i=0; i < kipdata.length; i++) {
+		tekenGeanimeerdeSprite(kipdata[i].x - cameraX,
+		kipdata[i].y - cameraY, kipdata[i].frameNr, kipspritesheet);
+	}
 }
 </script>
 	
