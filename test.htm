@@ -1,21 +1,35 @@
 <link type="text/css" rel="stylesheet" href="nevergonnagiveyouup.css"/>
 <p>the bad guys minecraft channeling</p>
-<button onclick="mf()">hi</button>
+<button onclick="mf()" ></button>
+<button class="bad"onclick="badmf()" ></button>
 <h1 id="ohmy">je score is:0</h1>
 <script>
-var sound1 = new Audio('ohmy/decidemp3-14575.mp3'); 
-  function mf() {
-    score += 1
-    sound1.play();
-	var h1 = document.getElementById("ohmy").innerHTML = "je score is:"+score;
-  }
-  if (score === 1000){
-  console.log("hi")
-  window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
-  }
- 
-	
-  
 var score = 0
 
+  function mf() {
+  var sound1 = new Audio('ohmy/decidemp3-14575.mp3'); 
+  sound1.play();
+  score += 1
+  var h1 = document.getElementById("ohmy").innerHTML = "je score is:"+score;
+  
+  }
+  function badmf() {
+  var sound2 = new Audio('ohmy/buzzer-or-wrong-answer-20582.mp3'); 
+  sound2.play();
+  score -= 1
+  var h1 = document.getElementById("ohmy").innerHTML = "je score is:"+score;
+  
+  }
+
+
+	
+ if (score < 0){
+ document.getElementById("ohmy").innerHTML = "je bent dood.";
+ }
+
+	
+  
+
+
 </script>
+  

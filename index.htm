@@ -3,6 +3,7 @@
 
 window.addEventListener('keydown', onkeydown);
 var home = 36;
+var space = 32;
 var isSoundPlaying = false;
 function onkeydown(event) {
 
@@ -10,7 +11,13 @@ function onkeydown(event) {
   console.log('home')
     window.location.href = "home.htm";
   }
-
+if (event.keyCode === space)
+const para = document.createElement("a");
+const node = document.createTextNode("psst hier!");
+para.appendChild(node);
+const element = document.getElementById("ohmy");
+element.appendChild(para);
+  }
   else if(event.keyCode === 82){
   console.log('rickrolled')
      window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
@@ -26,6 +33,7 @@ function onkeydown(event) {
   }
   }
 }
+
 function stopSoundBlock(){
     	isSoundPlaying = false;
 }
@@ -37,9 +45,9 @@ function stopSoundBlock(){
 <title>easter eggs</title>
 <header>
 <p><sup>de</sup>haan</p>
-<h1>
+<h1 id="ohmy">
 easter eggs</h1>
-
+<div id="div1"></div>
 <nav>
 <ul>
 
