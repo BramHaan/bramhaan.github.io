@@ -1,0 +1,118 @@
+<html class="ei">
+
+<script>
+	window.addEventListener('keydown', onkeydown);
+	var home = 36;
+	
+	function onkeydown(event) {
+		if (event.keyCode === home){
+			window.location.href = "home.htm";
+		}
+		else if(event.keyCode === 82){
+			window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+		}
+	}
+	
+	function setHtml(){
+		const body = document.findElementById("body");
+		body.removeAttribute("class");
+		body.setAttribute("class", "html");
+
+	}
+	
+	function setCss(){
+		
+	}
+	
+	function jsButtonDuplicator(){
+		const btn = document.createElement("BUTTON");
+		btn.innerHTML = "nog een button";
+		btn.setAttribute("onclick","jsButtonDuplicator()");
+		btn.setAttribute("class","big");
+		document.body.appendChild(btn);
+	}
+</script>
+
+
+<style type="text/css" id="styles">
+    button.big
+{
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #04AA6D;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+button.big:hover {background-color: #3e8e41}
+
+button.big:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+	
+}
+
+.html{
+	
+}
+
+.css{
+  min-height:100%;
+  background: 
+   linear-gradient(rgba(255,0,0,1) 0%, rgba(255,154,0,1) 10%, rgba(208,222,33,1) 20%, rgba(79,220,74,1) 30%, rgba(63,218,216,1) 40%, rgba(47,201,226,1) 50%, rgba(28,127,238,1) 60%, rgba(95,21,242,1) 70%, rgba(186,12,248,1) 80%, rgba(251,7,217,1) 90%, rgba(255,0,0,1) 100%) 
+   0 0/100% 200%;
+   animation: a 2s linear infinite;
+
+}
+@keyframes colorRotate {
+  0% {
+    color: red;
+  }
+  10% {
+    color: blue;
+  }
+  50% {
+    color: yellow;
+  }
+   75%{
+	color:blue;
+   }
+   100%{
+	color:red;
+   }
+  
+}
+@keyframes a {
+  to {background-position:0 -200%}
+}
+</style>
+
+
+
+<textarea id="editor"></textarea>
+<button id="preview">Preview</button>
+
+<header>
+<p><sup>de</sup>haan</p>
+<h1>presentatie over programmeren</h1>
+</header> 
+	<body>
+		<table width = 100%>
+			<tr>
+				<td><button class="html big" onclick=setHtml()> HTML </button></td>
+				<td><button class="css big" onclick=setCss()> CSS </button></td>
+				<td><button class="js big" onclick=jsButtonDuplicator()> Javascript </button> </td>
+			</tr>
+			<tr>
+				<h1> </h1>
+			</tr>
+		</table>
+		<a> broncode bekijken : ctrl + U </a>
+	</body>
+</html>
