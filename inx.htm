@@ -1,14 +1,19 @@
-<form>
-<input name="input"/>
-<br></br>
-<input type="reset" value="Reset" />
-</form>
-<button onclick="check()">submit</button>
+<input id="text_a" type="text;" />
+<p id="answer"></p>
+<button onclick="myFunction()">Check</button>
 
 <script>
- function check() {
- if (input === "home"){
-   window.location.href ="home.htm";
-   }}
+function myFunction()
+{
+var a=document.getElementById("text_a").value;
+
+if (a=="hello")
+  {
+document.getElementById("answer").innerHTML="Correct!";
+  }
+else
+  {
+document.getElementById("answer").innerHTML="Oops!";
+  }
+}
 </script>
-<h1> dit is een input</h1>
