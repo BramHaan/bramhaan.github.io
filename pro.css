@@ -1,0 +1,286 @@
+
+
+@keyframes colorRotate {
+  0% {
+    color: red;
+  }
+  10% {
+    color: blue;
+  }
+  50% {
+    color: yellow;
+  }
+   75%{
+	color:blue;
+   }
+   100%{
+	color:red;
+   }
+  
+}
+html.ei {
+  min-height:100%;
+  background: 
+   linear-gradient(rgba(255,0,0,1) 0%, rgba(255,154,0,1) 10%, rgba(208,222,33,1) 20%, rgba(79,220,74,1) 30%, rgba(63,218,216,1) 40%, rgba(47,201,226,1) 50%, rgba(28,127,238,1) 60%, rgba(95,21,242,1) 70%, rgba(186,12,248,1) 80%, rgba(251,7,217,1) 90%, rgba(255,0,0,1) 100%) 
+   0 0/100% 200%;
+   animation: a 2s linear infinite;
+}
+@keyframes a {
+  to {background-position:0 -200%}
+}
+html.ei{
+overflow: hidden;
+}
+html.jo {
+    background: linear-gradient(red, yellow, blue, red);
+}
+iframe{
+border-collapse: collapse;
+}
+.jah{
+background-image: url("..\jpg\rock.jpg");
+background-size: 100% 100%;
+}
+
+
+a img {
+  width: 200px;
+  height: 800px;
+  border-collapse:collapse;
+  border: none;
+  transition: 0.5s;
+}
+header p, h1{
+font-family: monospace;
+  animation: colorRotate 6s linear 0s infinite;
+}
+
+
+
+header.jo {
+font-family: monospace;
+}
+p.jo{
+text-align: center;
+}
+#jolo.bes{
+border: none;
+border-radius: 10px;
+margin: 10px;
+width: 35px;
+height: 20px;
+float: right;
+background-color: white;
+color: black;
+transition: 0.3s;
+}
+#jolo.bes:hover{
+width: 40px;
+height: 25px;
+color: white;
+background-color: red;
+}
+a button.jolo{
+border: none;
+border-radius: 10px;
+margin: 10px;
+width: 35px;
+height: 20px;
+color: black;
+background-color: white;
+transition: 0.3s;
+float: right;
+}
+a button.jolo:hover{
+width: 40px;
+height: 25px;
+background-color: green;
+color: white;
+}
+#hehe a{
+text-decoration:none;
+color:black;
+}
+#hehe a:hover{
+text-decoration: underline;
+color: blue;
+}
+a button.jolo2{
+border-radius: 10px;
+border: none;
+margin: 10px;
+width: 35px;
+height: 20px;
+color: black;
+background-color: white;
+transition: 0.3s;
+}
+a button.jolo2:hover{
+width: 40px;
+height: 25px;
+background-color: green;
+color: white;
+}
+a button.hell{
+border-radius: 10px;
+margin: 10px;
+width: 275px;
+height: 25px;
+color: black;
+background-color: white;
+transition: 0.3s;
+}
+a button.hell:hover{
+width: 300px;
+height: 50px;
+background-color: green;
+color: white;
+}
+a button.hellnaw{
+border-radius: 10px;
+margin: 10px;
+width: 75px;
+height: 25px;
+color: black;
+background-color: white;
+transition: 0.3s;
+}
+a button.hellnaw:hover{
+width: 100px;
+height: 35px;
+background-color: green;
+color: white;
+}
+header p {
+    float: left;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 0px;
+}
+   #et:hover {
+    width: 200px;
+    height: 830px;
+    content: url('..\jpg\ei1b.jpg');
+}
+   #ed:hover {
+    width: 200px;
+    height: 830px;
+    content: url('..\jpg\ei2b.jpg');
+}
+   #ep:hover {
+    width: 200px;
+    height: 830px;
+    content: url('..\jpg\ei3b.jpg');
+}
+   #eh:hover {
+    width: 200px;
+    height: 830px;
+    content: url('..\jpg\ei4b.jpg');
+}
+   #el:hover {
+    width: 200px;
+    height: 830px;
+    content: url('..\jpg\ei6b.jpg');
+}
+   #jt:hover {
+    width: 200px;
+    height: 830px;
+    content: url('..\jpg\ei1b.jpg');
+}
+   #jd:hover {
+    width: 200px;
+    height: 830px;
+    content: url('..\jpg\ei2b.jpg');
+}
+   #jp:hover {
+    width: 200px;
+    height: 830px;
+    content: url('..\jpg\ei3b.jpg');
+}
+   #jh:hover {
+    width: 200px;
+    height: 830px;
+    content: url('..\jpg\ei4b.jpg');
+}
+   #jl:hover {
+    width: 200px;
+    height: 830px;
+    content: url('..\jpg\ei6b.jpg');
+}
+header h1{
+  font-size: 16px;
+  text-align: right;
+}
+table.pro{
+font-size: 100%;
+border-collapse: collapse;
+width: 100%
+}
+th, td.pro{
+border: 1px solid black;
+padding: 8px;
+text-align: left;
+}
+th.pro{
+background-color: red;
+}
+td.pro{
+background-color: yellow;
+font-weight: bold;
+}
+
+
+
+nav ul {
+    list-style-type: none;
+    background-color: cyan;
+    border: 4px solid black;
+    border-radius: 10px;
+    font-family: sans-serif;
+    font-weight: bold;
+    padding: 1em;
+}
+nav ul li {
+    display: inline;
+    border-right: 2px solid black;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+nav ul li:last-child {
+    border-right: none;
+}
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    transition: 0.5s;
+}
+nav ul li a:hover{
+    color: green;
+	text-decoration: underline;
+}
+.selected{
+    color: gray;
+}
+
+button.big
+{
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #04AA6D;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+button.big:hover {background-color: #3e8e41}
+
+button.big:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+	
+}
