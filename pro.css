@@ -39,6 +39,7 @@ border-collapse: collapse;
 }
 .jah{
 background-image: url("jpg/rock.jpg");
+background-size: 100% 100%;
 }
 
 
