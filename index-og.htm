@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    
+    <script>
+      
+      window.addEventListener('keydown', onkeydown);
+      var home = 36;
+      var space = 32;
+      var isSoundPlaying = false;
+      function onkeydown(event) {
+        
+        if (event.keyCode === home){
+          console.log('home')
+          window.location.href = "extentions/home.htm";
+        }
+        
+        else if(event.keyCode === 82){
+          console.log('rickrolled')
+          window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+        }
+        else if(event.keyCode === 79){
+          
+          if (!isSoundPlaying){ 
+            isSoundPlaying = true;
+            var sound1 = new Audio('ohmy/oh-my-god-meme.mp3'); 
+            console.log('audio');
+            sound1.play();
+            setTimeout(stopSoundBlock, 1900);
+          }
+        }
+      }
+      
+      function stopSoundBlock(){
+        isSoundPlaying = false;
+      }
+      
+      
+      
+      </script>
+  <link type="text/css" rel="stylesheet" href="pro.css"/>
+  <title>easter eggs</title>
+  <div class="top">
+    <h1 class="name">
+      <sup>de</sup>haan
+    </h1>
+    <h1 class="channel-name">
+      easter eggs
+    </h1>
+  </div>
+      <nav>
+        <ul>
+          <li>
+            <a href="index.html">main website</a>
+          </li>
+          <li class="selected">
+            
+            
+            easter eggs
+            
+          </li>
+          <li><a href="extentions/prog-pro.htm">programmeren leren</a></li>
+          <li><a href="extentions/jaaaaa.htm">Victors idee&euml;n</a></li>
+        </ul>
+      </nav>
+      <div class="info-container">
+        <div class="info-ball">i</div>
+
+          <div class="info-bar">
+          hover de muis over de eieren om te kijken naar de easter eggs
+          </div>
+      </div>
+    <div class="eggs">
+      <a class="ei" href="extentions/meester.htm"><img id="et" src="jpg/ei1.jpg"></a>
+      <a class="ei" href="extentions/google.htm"><img id="ed" src="jpg/ei2.jpg"></a>
+      <a class="ei" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img id="ep" src="jpg/ei3.jpg"></a>
+      <a class="ei" href="extentions/over_mij.htm"><img id="eh" src="jpg/ei4.jpg"></a>
+      <a class="ei" href="extentions/vids.htm"><img id="el" src="jpg/ei6.jpg"></a>
+    </div>
+  </body>
+</html>
