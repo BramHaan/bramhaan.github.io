@@ -1,0 +1,22 @@
+<html>
+	<body>
+		<script>
+		
+			var img = new Image();
+				img.src = "jpg/pngegg.png";
+			var canvas = document.createElement("canvas");
+				canvas.width = 1800;
+				canvas.height = 1400;
+			var c = canvas.getContext("2d");
+				c.fillStyle = "green";
+				c.fillRect(0, 0, 800, 600);
+				
+				img.addEventListener("load", (e) => {
+				c.drawImage(img, 40, 40);})
+				console.log(img.src);
+			document.body.appendChild(canvas);
+		</script>
+		
+
+	</body>
+</html>

@@ -1,0 +1,9 @@
+<button onclick="myfunction()">dit is een button</button>
+<script>
+function myfunction(){
+const btn = document.createElement("BUTTON");
+ btn.innerHTML = "nog een button";
+ btn.setAttribute("onclick","myfunction()");
+ document.body.appendChild(btn);
+}
+</script>

@@ -1,0 +1,206 @@
+<p>ADD ME OP ROBLOX MIJN NAAM IS VICCOOL12345678</p>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snake Game</title>
+  <style>
+    #game-board {
+      display: grid;
+      grid-template-columns: repeat(20, 20px);
+    }
+
+    .cell {
+      width: 20px;
+      height: 20px;
+      border: 1px solid #ddd;
+    }
+
+    .snake {
+      background-color: #333;
+    }
+
+    .food {
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <div id="game-board"></div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const boardSize = 20;
+      let snake = [
+        { x: 5, y: 5 },
+        { x: 4, y: 5 },
+        { x: 3, y: 5 },
+        { x: 2, y: 5 },
+        { x: 1, y: 5 },
+        { x: 0, y: 5 }
+      ];
+      let food = getRandomPosition();
+      let direction = 'right';
+      let isGameOver = false;
+      let interval = 200;
+      let gameInterval;
+
+      function getRandomPosition() {
+        return {
+          x: Math.floor(Math.random() * boardSize),
+          y: Math.floor(Math.random() * boardSize)
+        };
+      }
+
+      function renderBoard() {
+        const gameBoard = document.getElementById('game-board');
+        gameBoard.innerHTML = '';
+
+        for (let row = 0; row < boardSize; row++) {
+          for (let col = 0; col < boardSize; col++) {
+            const cell = document.createElement('div');
+            cell.classList.add('cell');
+            gameBoard.appendChild(cell);
+          }
+        }
+      }
+
+      function renderSnake() {
+        const gameBoard = document.getElementById('game-board');
+        snake.forEach(segment => {
+          const snakeCell = gameBoard.children[segment.x + segment.y * boardSize];
+          if (snakeCell) {
+            snakeCell.classList.add('snake');
+          }
+        });
+      }
+
+      function renderFood() {
+        const gameBoard = document.getElementById('game-board');
+        const foodCell = gameBoard.children[food.x + food.y * boardSize];
+        if (foodCell) {
+          foodCell.classList.add('food');
+        }
+      }
+
+      function update() {
+        if (isGameOver) return;
+
+        const head = { ...snake[0] };
+
+        switch (direction) {
+          case 'up':
+            head.y = (head.y - 1 + boardSize) % boardSize;
+            break;
+          case 'down':
+            head.y = (head.y + 1) % boardSize;
+            break;
+          case 'left':
+            head.x = (head.x - 1 + boardSize) % boardSize;
+            break;
+          case 'right':
+            head.x = (head.x + 1) % boardSize;
+            break;
+        }
+
+        snake.unshift(head);
+
+        if (head.x === food.x && head.y === food.y) {
+          food = getRandomPosition();
+          increaseSpeed();
+        } else {
+          snake.pop();
+        }
+
+        checkCollision();
+        render();
+      }
+
+      function checkCollision() {
+        const head = snake[0];
+
+        // Check collision with walls
+        if (head.x < 0 || head.x >= boardSize || head.y < 0 || head.y >= boardSize) {
+          gameOver();
+        }
+
+        // Check collision with itself
+        for (let i = 1; i < snake.length; i++) {
+          if (head.x === snake[i].x && head.y === snake[i].y) {
+            gameOver();
+          }
+        }
+      }
+
+      function increaseSpeed() {
+        interval -= 5;
+        clearInterval(gameInterval);
+        gameInterval = setInterval(update, interval);
+      }
+
+      function gameOver() {
+        isGameOver = true;
+        clearInterval(gameInterval);
+        alert('Game Over! Your score: ' + (snake.length - 1) + '\nPress R to restart.');
+      }
+
+      function restartGame() {
+        if (isGameOver) {
+          isGameOver = false;
+          snake = [
+            { x: 5, y: 5 },
+            { x: 4, y: 5 },
+            { x: 3, y: 5 },
+            { x: 2, y: 5 },
+            { x: 1, y: 5 },
+            { x: 0, y: 5 }
+          ];
+          food = getRandomPosition();
+          direction = 'right';
+          interval = 200;
+          clearInterval(gameInterval);
+          gameInterval = setInterval(update, interval);
+          render();
+        }
+      }
+
+      function render() {
+        const gameBoard = document.getElementById('game-board');
+        const cells = gameBoard.getElementsByClassName('cell');
+
+        // Clear board
+        for (let i = 0; i < cells.length; i++) {
+          cells[i].classList.remove('snake', 'food');
+        }
+
+        renderSnake();
+        renderFood();
+      }
+
+      function handleKeyPress(event) {
+        switch (event.key) {
+          case 'ArrowUp':
+            if (direction !== 'down') direction = 'up';
+            break;
+          case 'ArrowDown':
+            if (direction !== 'up') direction = 'down';
+            break;
+          case 'ArrowLeft':
+            if (direction !== 'right') direction = 'left';
+            break;
+          case 'ArrowRight':
+            if (direction !== 'left') direction = 'right';
+            break;
+          case 'r':
+            restartGame();
+            break;
+        }
+      }
+
+      document.addEventListener('keydown', handleKeyPress);
+
+      renderBoard();
+      gameInterval = setInterval(update, interval);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<body >
+	<canvas id="myCanvas" width="800" height="600" ></canvas>
+<body>
+<head>
+<script>
+var canvas_breedte = 800;
+var canvas_hoogte = 600;
+var grond_y = 540;
+var kip_breedte = 141;
+var kip_hoogte = 139
+var peter_hoogte =  229;
+var peter_breedte = 181;
+var peterY_versnelling = 1;
+var peterYsnelheid = 0;
+var space = 32;
+var achtergrond_breedte = 1000;
+var spatie_ingedrukt = false;
+var peter_sprong_kracht = 20;
+var peterisinlucht = false;
+var kip = new Image();
+kip.scr = 'jpg/geanimeerdekip.jpg';
+var kipdata = [{
+	x: 400,
+	y: grond_y - kip_hoogte
+}];
+var kipspritesheet = {
+	nrFramesPerRij:4,
+	spriteWidth:kip_breedte,
+	spriteHeight:kip_hoogte,
+	image: kip
+};
+const canvas = document.getElementById("myCanvas");
+const ctx = canvas.getContext("2d");
+var peterX = canvas_breedte / 2;
+var peterY = grond_y - peter_hoogte;
+var peterX_snelheid = 5;
+var cameraX = 0;
+var cameraY = 0;
+var peter = new Image();
+peter.src = 'jpg/peter.png';
+var achtergrond = new Image();
+achtergrond.src = 'jpg/achtergrond.jpg';
+window.addEventListener('DOMContentLoaded', start);
+window.addEventListener('keydown', onKeyDown);
+window.addEventListener('keyup', onKeyUp);
+function onKeyDown(event){
+	if (event.keyCode === space) {
+		spatie_ingedrukt = true;
+	}
+}
+function onKeyUp(event){
+	if (event.keyCode === 32) {
+		spatie_ingedrukt = false;		
+	}
+}
+function start(){
+	window.requestAnimationFrame(hoofdlus);
+}
+
+
+function hoofdlus(){
+	update();
+	draw();
+	window.requestAnimationFrame(hoofdlus);
+}
+function update(){
+	peterX = peterX + peterX_snelheid;
+	if (spatie_ingedrukt && !peterisinlucht) {
+	    peterYsnelheid = -peter_sprong_kracht;
+		peterisinlucht = true;
+	}
+	peterY = peterY + peterYsnelheid;
+	peterYsnelheid = peterYsnelheid + peterY_versnelling;
+	if(peterY > (grond_y - peter_hoogte)){
+		peterY = grond_y - peter_hoogte;
+		peterYsnelheid = 0;
+		peterisinlucht = false;
+	}
+	cameraX = peterX - 150;
+}
+function draw(){
+	ctx.fillStyle = 'LightSkyBlue';
+	ctx.fillRect(0, 0, canvas_breedte, grond_y - 40);
+	var achtergrondX = -(cameraX % achtergrond_breedte);
+	ctx.drawImage(achtergrond,achtergrondX, -210);
+	ctx.drawImage(achtergrond, achtergrondX + achtergrond_breedte, -210); 
+	ctx.fillStyle = 'ForestGreen';
+	ctx.fillRect(0, grond_y - 40, canvas_breedte, canvas_hoogte - grond_y + 40);
+	ctx.drawImage(peter, peterX - cameraX , peterY - cameraY );
+	function tekenGeanimeerdeSprite(schermX, schermY, frameNr, spriteSheet) {
+		var spriteSheetRij = Math.floor(frameNr / spriteSheet.nrFramesPerRij);
+		var spriteSheetKolom = frameNr % spriteSheet.nrFramesPerRij;
+		var spriteSheetX = spriteSheetKolom * spriteSheet.spriteWidth;
+		var spriteSheetY = spriteSheetRij * spriteSheet.spriteHeight;
+		ctx.drawImage(
+			spriteSheet.image,
+			spriteSheetX, spriteSheetY,
+			spriteSheet.spriteWidth, spriteSheet.spriteHeight, schermX, schermY,
+			spriteSheet.spriteWidth, spriteSheet.spriteHeight
+		);
+	}
+	for (var i=0; i < kipdata.length; i++) {
+		tekenGeanimeerdeSprite(kipdata[i].x - cameraX,
+		kipdata[i].y - cameraY, kipdata[i].frameNr, kipspritesheet);
+	}
+}
+</script>
+	
+</head>
+
+</html>
