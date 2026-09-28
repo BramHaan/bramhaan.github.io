@@ -138,3 +138,107 @@ nav ul li a:hover{
     color: gray;
     text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
 }
+h1.name{
+    padding-left: 10px;
+    align-items: left;
+}
+h1.channel-name{
+  padding-right: 10px;
+    align-items: right;
+}
+iframe{
+border-collapse: collapse;
+}
+.jah{
+background-image: url("../jpg/rock.jpg");
+background-size: 100% 100%;
+}
+a img {
+  width: 100px;
+  height: 400px;
+  border-collapse:collapse;
+  border: none;
+  transition: 0.5s;
+}
+.eggs{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  margin: 0 auto;
+  padding: 0;
+  padding-bottom: 0;
+}
+div.eggs{
+  border-radius: 3px;
+  border:solid white;
+  width: fit-content;
+}
+   #et:hover {
+    width: 125px;
+    height: 450px;
+    content: url('../jpg/ei1b.jpg');
+}
+   #ed:hover {
+    width: 125px;
+    height: 450px;
+    content: url('../jpg/ei2b.jpg');
+}
+   #ep:hover {
+    width: 125px;
+    height: 450px;
+    content: url('../jpg/ei3b.jpg');
+  }
+   #eh:hover {
+    width: 125px;
+    height: 450px;
+    content: url('../jpg/ei4b.jpg');
+}
+   #el:hover {
+    width: 125px;
+    height: 450px;
+    content: url('../jpg/ei6b.jpg');
+}
+   #jt:hover {
+    width: 125px;
+    height: 450px;
+    content: url('../jpg/ei1b.jpg');
+}
+   #jd:hover {
+    width: 125px;
+    height: 450px;
+    content: url('../jpg/ei2b.jpg');
+}
+   #jp:hover {
+    width: 125px;
+    height: 450px;
+    content: url('../jpg/ei3b.jpg');
+}
+   #jh:hover {
+    width: 125px;
+    height: 450px;
+    content: url('../jpg/ei4b.jpg');
+}
+   #jl:hover {
+    width: 125px;
+    height: 450px;
+    content: url('../jpg/ei6b.jpg');
+}
+table.pro{
+font-size: 100%;
+border-collapse: collapse;
+width: 100%
+}
+th, td.pro{
+border: 1px solid black;
+padding: 8px;
+text-align: left;
+}
+th.pro{
+background-color: red;
+}
+td.pro{
+background-color: yellow;
+font-weight: bold;
+}
+
