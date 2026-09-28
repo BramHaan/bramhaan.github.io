@@ -1,6 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
 html{
     background-color: #000968;
-    height: 100%;
     overflow: hidden;
 }
 body{
@@ -8,14 +8,18 @@ body{
     background-color: cadetblue;
     border: 5px solid black;
     box-sizing: border-box;
-    margin: 10px;
-<<<<<<< HEAD:pro.css
+    margin: 10px
   }
+.prog{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 20px;
+    color: green;
+    text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+    margin: 10px;
+}
 .float-mid{
     text-align: center;
     margin: 0 auto;
-=======
->>>>>>> 7c80f13 (cleaned up the folders and renamed the main css):css/main-css.css
 }
 .info-container {
     margin-left: 10px;
@@ -100,7 +104,6 @@ h1.channel-name{
     align-items: center;
     text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
 }
-<<<<<<< HEAD:pro.css
 h1, p{
     text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
 }
@@ -111,7 +114,6 @@ div.tutorial{
     border-radius: 5px;
     padding: 2px;
 }
-=======
 .name {
     margin-left: 10px;
 }
@@ -157,7 +159,6 @@ nav ul li a:hover{
     color: gray;
     text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
 }
->>>>>>> 7c80f13 (cleaned up the folders and renamed the main css):css/main-css.css
 h1.name{
     padding-left: 10px;
     align-items: left;
