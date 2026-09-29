@@ -8,12 +8,8 @@ body{
     background-color: cadetblue;
     border: 5px solid black;
     box-sizing: border-box;
-<<<<<<< HEAD
     margin: 10px;
 }
-=======
-    margin: 10px
-  }
 .prog{
     font-family: 'JetBrains Mono', monospace;
     font-size: 20px;
@@ -25,7 +21,6 @@ body{
     text-align: center;
     margin: 0 auto;
 }
->>>>>>> 543e3c65fa4ff73aa0ddc5fa73536e00cd7e182d
 .info-container {
     margin-left: 10px;
     position: relative;
@@ -109,8 +104,6 @@ h1.channel-name{
     align-items: center;
     text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
 }
-<<<<<<< HEAD
-=======
 h1, p{
     text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
 }
@@ -121,7 +114,6 @@ div.tutorial{
     border-radius: 5px;
     padding: 2px;
 }
->>>>>>> 543e3c65fa4ff73aa0ddc5fa73536e00cd7e182d
 .name {
     margin-left: 10px;
 }
